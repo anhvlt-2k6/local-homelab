@@ -39,24 +39,24 @@ DC01, DC02
 	Act as the DNS Server for local requests
 	File Server for policy deployments
 
-AUTH01:
+AUTH:
 	Act as the Federation Services for SSO
 	Act as the RADIUS server for IEEE 802.11 Authentication using Active Directory infra
 	Act as the central management server (must have full RSATs)
-	
-AUTH02:
-	Act as the Federation Services for SSO
 
-SQL01, SQL02:
+DB:
 	Act as the SQL Server of the network
 	Must configure high-availability group
 
 WEB:
 	Act as the web service of the local network
+	Act as the second site for AD FS service (in case the auth fail)
 	Note: Must install runner for DEVOPS server
 
 BK:
 	Act as the backup server for local Windows environment (not included the HV01)
+	Act as the SQL Server of the network (second site)
+	Must configure high-availability group
 	Note: should mount HDD into
 
 DNS01, DNS02:

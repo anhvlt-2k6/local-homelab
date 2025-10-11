@@ -23,11 +23,9 @@ IPv4 address range for virtual machines in each hypervisor server
 IPv4 addresses for VMs on HV01
 	- DC01 - 192.168.1.10
 	- DC02 - 192.168.1.11
-	- AUTH01 - 192.168.1.20
-	- AUTH02 - 192.168.1.21
-	- SQL01 - 192.168.1.24
-	- SQL02 - 192.168.1.25
-	- WEB - 192.168.1.26
+	- AUTH - 192.168.1.20
+	- WEB - 192.168.1.21
+	- DB - 192.168.1.24
 	- BK - 192.168.1.28
 
 IPv4 addresses for VMs on HV02

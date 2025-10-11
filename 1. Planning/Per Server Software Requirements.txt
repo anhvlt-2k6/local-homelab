@@ -44,7 +44,7 @@ DC02:
 		System Insights
 		Windows Server Backup
 
-AUTH01:
+AUTH:
 	- Operating System: Windows Server 2022 Datacenter
 	- Required Roles:
 		Active Directory Federation Services
@@ -60,33 +60,7 @@ AUTH01:
 	- Optional Features:
 		All RSATs
 
-AUTH02:
-	- Operating System: Windows Server 2022 Datacenter
-	- Required Roles:
-		Active Directory Federation Services
-		File Server (with Storage Services)
-	- Required Features:
-		Enhanced Storage
-		Microsoft Defender Antivirus
-		Setup and Boot Event Collection
-		System Data Archiver
-		System Insights
-		Windows Server Backup
-
-DB01:
-	- Operating System: Windows Server 2022 Datacenter Core
-	- Required Roles:
-		File Server (with Storage Services)
-		SQL Server 2022 Enterprise
-	- Required Features:
-		Enhanced Storage
-		Microsoft Defender Antivirus
-		Setup and Boot Event Collection
-		System Data Archiver
-		System Insights
-		Windows Server Backup
-
-DB02:
+DB:
 	- Operating System: Windows Server 2022 Datacenter Core
 	- Required Roles:
 		File Server (with Storage Services)
@@ -102,6 +76,7 @@ DB02:
 WEB:
 	- Operating System: Windows Server 2022 Datacenter
 	- Required Roles:
+		Active Directory Federation Services
 		File Server (with Storage Services)
 		Web Service (IIS)
 	- Required Features:
@@ -116,6 +91,7 @@ BK:
 	- Operating System: Windows Server 2022 Datacenter Core
 	- Required Roles:
 		File Server (with Data Deduplication and Storage Services)
+		SQL Server 2022 Enterprise
 	- Required Features:
 		Enhanced Storage
 		Microsoft Defender Antivirus
