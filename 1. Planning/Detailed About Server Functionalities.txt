@@ -1,0 +1,72 @@
+Key note:
+
+* For Windows Server
+	1. Should not install client management application (such as SSMS)
+	2. Should remove client-based applications:
+		Internet Explorer 11
+		Math Recognizer
+		Microsoft Paint
+		Steps Recorder
+		Windows Media Player
+		Microsoft Edge
+	3. These following features should be removed:
+		Azure Arc Setup
+		XPS Viewer
+	4. Should use template-based deployment
+		It can reduct the administration workloads.
+		For detailed, please see commands and configuration in
+			- "Install For Windows Template.ps1" - for scripting
+			- "FunctionalCorServer_DeploymentConfigTemplate.xml" - Windows Server Core minimal functional features
+			- "FunctionalGUIServer_DeploymentConfigTemplate.xml" - Windows Server GUI minimal functional features
+
+* For Ubuntu Server
+	1. Should only install Cockpit Web Interface for HV02
+	2. SSH should block the authenticate with password when connecting (Only use certificate).
+
+HV01:
+	Act as the Hypervisor host (Type 1 - Bare metal) for operating system.
+	For best operation, File Server with deduplication service is installed to reduce the cost and storage
+	Note: The Hypervisor is not configured for backup service, so keep it running on minimal server features.
+
+HV02:
+	Act as the Hypervisor host (Type 1 - Bare metal) for operating system.
+	Also handle backup service, as a NAS for incoming Windows Server environment
+	Have a bare metal disk backup
+	
+DC01, DC02
+	Act as the domain controller
+	Act as the certification authority
+	Act as the DNS Server for local requests
+	File Server for policy deployments
+
+AUTH01:
+	Act as the Federation Services for SSO
+	Act as the RADIUS server for IEEE 802.11 Authentication using Active Directory infra
+	Act as the central management server (must have full RSATs)
+	
+AUTH02:
+	Act as the Federation Services for SSO
+
+SQL01, SQL02:
+	Act as the SQL Server of the network
+	Must configure high-availability group
+
+WEB:
+	Act as the web service of the local network
+	Note: Must install runner for DEVOPS server
+
+BK:
+	Act as the backup server for local Windows environment (not included the HV01)
+	Note: should mount HDD into
+
+DNS01, DNS02:
+	Act as the DNS relay node. Control the DNS requests in the network and block invalid/risky DNS requests
+
+DEVOPS:
+	DevOps Server of the network
+	Have local runner for quick deployment
+	Note: Must configure SSO SAML 2.0 with the AUTHXX servers
+
+JHUBLAB01:
+	JupyterHub for local code testing environment
+	Note: Must configure SSO SAML 2.0 with the AUTHXX servers

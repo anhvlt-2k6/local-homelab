@@ -1,0 +1,5 @@
+# Prevent publishing certificates online 
+*.crt
+*.cer
+*.pfx
+

@@ -1,0 +1,35 @@
+HV01:
+	Disk 0 (SSD NVMe, GPT): 
+		- Boot (EFI, FAT32)
+			Size: 50MB
+			Mount: None
+		- Operating System (NTFS)
+			Size: 30GB
+			Mount: C:\
+		- Recovery and Boot Diagnostic (NTFS)
+			Size: 1GB
+			Mount: None
+		- Hypervisor Layout (ReFS)
+			Size: 205GB
+			Mount: C:\Hyper-V
+	Disk 1 (HDD SATA):
+		(Dismounted from host for BK virtual machine for backup services)
+
+HV02:
+	Disk 0 (SSD NVMe, MBR):
+		- Boot (FAT32)
+			Size: 500MB
+			Mount: /boot
+		- Operation System (EXT4)
+			Size: 54GB
+			Mount: /(root)
+		- Swap Partition (-)
+			Size: 8GB
+			Mount: -
+		- Backup Partition for Windows Server services
+			Size: 200GB
+			Mount: /mnt/wsbackup
+	Disk 1 (SD Card, MBR):
+		- Backup Partition for Ubuntu Hypervisor Server
+			Size: 64GB
+			Mount: /mnt/ddbackup
