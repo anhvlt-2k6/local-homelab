@@ -1,0 +1,38 @@
+The primary domain for local domain: workshop.neko
+The secondary domain for quick web deployment (aka GitLab Web): view.neko
+
+* The recommendations can be run in the PowerShell scripts: Run-Prequisites.ps1
+
+Requirements for Active Directory setup:
+	1. Make sure the IPv4 private address is configured
+	2. Windows is up-to-date and got activated
+	3. Windows image condition is good and there is no point to be repaired
+
+Installing AD DS Roles
+	The script Install-ADRoles.ps1 can let you install the AD DS roles.
+	However, it must include the DomainController_DeploymentConfigTemplate.xml in the same path of the script
+
+Promote first domain controller
+	The domain controller (DC01) is the primary DC in the network
+	The promotion script is Promote-ADForest.ps1
+
+Promote secondary domain controller
+	The domain controller (DC02) is the secondary DC in the network
+	The promotion script is Promote-ADSecondary.ps1
+
+Securing domain controller with security baselines for Windows Server 2022
+	Requirements: 
+		Must have a Windows 10/11 client joined into the domain
+		Download the security baselines on https://www.microsoft.com/download/details.aspx?id=55319
+	Step-by-step:
+		1. Create an OU "Servers" in the AD (recommend using "Active Directory Users and Computers") 
+			to seperate the Domain Controller baselines and Server baselines
+		2. Extract the "Windows Server 2022 Security Baseline.zip"
+		3. Read the "GP Reports" after extracting the compressed .zip file for aspects of changing
+		4. Go to "Group Policy Management" (gpmc.msc), creating new policies and use "Import Settings" to the folder of GPOs.
+			Recommend using the same name as the name of that policy and change the GPO status to "Enabled"
+		5. Make sure the group policies of security baseline apply scope must follow these rules
+			- For Domain Controller baselines, it must be in OU "Domain Controllers"
+			- For Member Server baselines, it must be in OU "Servers" or somewhere else not in global and OU "Domain Controllers"
+			- For IE11, Domain Security, and Defender Antivirus baselines, it must be in global
+		6. Once done, force update policies on Domain Controllers and restart them
