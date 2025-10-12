@@ -30,7 +30,7 @@ if ($primaryDCContact.PingSucceeded -eq $true) {
     Write-Host "Unable to get status of $domainController. Please verify the network!" -ForegroundColor Red
 }
 
-if (-not ($isADDSInstalled) -or -not($isDNSInstalled) -or($isPrimaryDCCOntacted)) {
+if (-not ($isADDSInstalled) -or -not($isDNSInstalled) -or -not($isPrimaryDCCOntacted)) {
     Write-Host "Unable to promote to domain controller. Please review in Install-ADRoles.ps1 for configuration" -ForegroundColor Red
     exit 1
 }
