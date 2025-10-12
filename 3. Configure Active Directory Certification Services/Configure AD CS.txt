@@ -1,0 +1,18 @@
+Configuring AD CS on DC01 and DC02
+Primary AD CS server: DC01
+
+* For fresh new domain controller installation, please run the Install-ADCS.ps1 for AD CS installation
+
+Installing new AD CS on DC01 (root CA)
+	For robust installation, you can use Promote-RootADCS.ps1 to promote Root CA on the Active Directory
+
+Post-installation for AD CS on DC01
+	1. In Auditing of Certification Authority (RSAT), check of all events to audit
+	2. Allow Domain Computers and Domain Controllers enroll for Web Server certificate
+	
+Configuring other AD CS services (optional)
+	For other role installation, it must be done through Server Manager because of the 
+		complexity of configuring certificate services (except for OCSP)
+
+Installing new AD CS on DC02 (subroot)
+	For robust installation, you can use Promote-SubRootADCS.ps1 to promote Root CA on the Active Directory
