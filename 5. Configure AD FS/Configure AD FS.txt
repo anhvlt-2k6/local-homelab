@@ -1,0 +1,21 @@
+Configure AD FS on AUTH
+
+Pre-install AD FS:
+	1. Configure the Web Server certificate
+		Note that the Web Server certificate should include these parameters
+			Common Name: adfs.workshop.neko
+			DNS: adfs.workshop.neko, auth.workshop.neko, certauth.adfs.workshop.neko, enterpriseregistration.workshop.neko
+
+New install AD FS Farm on AUTH
+	Run script Configure-ADFS.ps1. Don't forget to change the $certThumb to the thumbprint of the certficate you just have enrolled
+
+Post-installation
+	1. Restart the machine, if a warning specified
+	2. Configure DNS server for pointing these records (CNAME) to auth.workshop.neko
+		adfs.workshop.neko
+		certauth.adfs.workshop.neko
+		enterpriseregistration.workshop.neko
+	3. To enable IdP SSO and branding, run the script Post-ADFS.ps1
+	4. Verify the new AD FS Farm. Try sign-in with administrator account into this web site (test on client-side)
+		https://adfs.workshop.neko/adfs/ls/idpinitiatedsignon.aspx
+	5. (Optional, not required) Configure Device Registration in 
