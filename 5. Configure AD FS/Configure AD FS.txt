@@ -18,4 +18,4 @@ Post-installation
 	3. To enable IdP SSO and branding, run the script Post-ADFS.ps1
 	4. Verify the new AD FS Farm. Try sign-in with administrator account into this web site (test on client-side)
 		https://adfs.workshop.neko/adfs/ls/idpinitiatedsignon.aspx
-	5. (Optional, not required) Configure Device Registration in 
+	5. (Optional, not required) Configure Device Registration in AD FS MMC
