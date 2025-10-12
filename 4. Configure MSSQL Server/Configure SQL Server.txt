@@ -1,0 +1,36 @@
+Configure SQL Server on DB
+
+Make sure the SQL Server 2022 is downloaded and mounted
+
+* SQL Server 2022 Product Key
+	- Enterprise: J4V48-P8MM4–9N3J9-HD97X-DYMRM
+	- Standard: FG86G-CHH2T-CB7NJ-XT7D2-V8V4X
+
+* Key note:
+	You should not enable sa account on the SQL Server
+	It is recommended to enable MMC on Server Core with SQL Server by using this command
+		Add-WindowsCapability -Online -Name "ServerCore.AppCompatibility~~~~0.0.1.0"
+
+* Get the Computer Certificate from CA root
+	Run script Get-Certificate.ps1 to configure certificate
+
+SQL Server installation on Windows Server 2022 Core
+	- UI Mode on Windows Server: .\setup.exe /UIMODE=EnableUIOnServerCore /Action=INSTALL
+	- ... with configuration file: .\setup.exe /UIMODE=EnableUIOnServerCore /ConfigurationFile=C:\SQLInstallationConfiguration.ini
+	
+Post-installation for SQL Server
+	- Get the SQL update manually on Windows Update Catalog
+		https://www.catalog.update.microsoft.com/Search.aspx?q=SQL+Server+2022&scol=DateComputed&sdir=desc
+		You can use the curl command to download update from the Catalog
+		Upgrade command for SQL Update: .\setup.exe /UIMODE=EnableUIOnServerCore
+	- Using SQL Server Configuration Manager (C:\Windows\SysWOW64\SQLServerManager16.msc) to configure
+		1. Enable TCP/IP in SQL Server Network Configuration
+		2. Right-click on SQL Server Network Configuration to configure certificate and Force Encryption
+		3. Change MSSQLSERVER service to run on "Local Machine" and enable "Always On Availability Group"
+		4. Change SQL Server Browser start mode to "Automatic"
+		5. Change SQL Server Agent start mode to "Automatic"
+	- Enable MSSQL Port in Firewall inbound rules (secure mode only)
+	- Verify SQL Server configuration
+		1. Try to ping the server
+		2. Using Test-NetConnection to validate SQL Server, port 1433
+		3. Using SSMS to connect to the server
