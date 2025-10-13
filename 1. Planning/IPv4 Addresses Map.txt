@@ -25,8 +25,9 @@ IPv4 addresses for VMs on HV01
 	- DC02 - 192.168.1.11
 	- AUTH - 192.168.1.20
 	- WEB - 192.168.1.21
-	- DB - 192.168.1.24
-	- BK - 192.168.1.28
+	- DB (cluster) - 192.168.1.24
+	- DB01 - 192.168.1.25
+	- DB02 - 192.168.1.26
 
 IPv4 addresses for VMs on HV02
 	- DNS01 (for exit relay and ad-blocker) - 192.168.1.30
