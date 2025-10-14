@@ -6,10 +6,9 @@ if ($getADFSRole.InstallState -eq "Installed") {
 	Write-Host "AD FS Services are installed!"
 	$isADFSInstalled = $true
 } else {
-	Write-Host "AD FS Services are not installed!"
-	exit 1
+	Write-Host "AD FS Services are not installed. Try installing..."
+	Install-WindowsFeature ADFS-Federation -IncludeManagementTools
 }
-
 
 Import-Module ADFS
 
@@ -22,4 +21,4 @@ Install-AdfsFarm `
 	-FederationServiceDisplayName:"The Neko Workshop Federation Service" `
 	-FederationServiceName:"adfs.workshop.neko" `
 	-GroupServiceAccountIdentifier:"WORKSHOP\adfssrv`$" `
-	-SQLConnectionString:"Data Source=db.workshop.neko;Initial Catalog=ADFSConfiguration;Integrated Security=True;Min Pool Size=20;Encrypt=True"
+	-SQLConnectionString:"Data Source=db01.workshop.neko;Initial Catalog=ADFSConfiguration;Integrated Security=True;Min Pool Size=20;Encrypt=True"

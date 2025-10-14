@@ -1,5 +1,8 @@
 Configure AD FS on AUTH
 
+* It is recommended to create new certificate template from Web Server of Certificate Authority server
+	that support RSA 4096 and private key export (delegate per server only)
+	
 Pre-install AD FS:
 	1. Configure the Web Server certificate
 		Note that the Web Server certificate should include these parameters
