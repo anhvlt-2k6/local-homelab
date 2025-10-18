@@ -2,4 +2,5 @@
 *.crt
 *.cer
 *.pfx
-
+*.pem
+.certs
