@@ -30,10 +30,3 @@ Post-installation for SQL Server
 		1. Try to ping the server
 		2. Using Test-NetConnection to validate SQL Server, port 1433
 		3. Using SSMS to connect to the server
-
-Configure SQL Server Always On Availability Group
-	1. Run Install-FailoverFeatures.ps1 on both DB01 and DB02. 
-		Make sure the SQL_FailoverDeploymentConfigTemplate.xml is as same path as the script
-	2. Configure Failover Cluster for DB01 and DB02 (using Cluadmin.msc)
-	3. Restart both servers
-	4. Using SSMS to configure Availability Groups
