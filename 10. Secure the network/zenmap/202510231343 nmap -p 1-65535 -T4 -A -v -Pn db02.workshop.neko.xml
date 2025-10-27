@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?><nmaprun args="nmap -p 1-65535 -T4 -A -v -Pn db02.workshop.neko" profile_name="" scanner="nmap" start="1761201814" startstr="Thu Oct 23 13:43:34 2025" version="7.95" xmloutputversion="1.04"><scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"></scaninfo><verbose level="1"></verbose><debugging level="0"></debugging><output type="interactive">Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-10-23 13:43 +07
+NSE: Loaded 157 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 13:43
+Completed NSE at 13:43, 0.00s elapsed
+Initiating NSE at 13:43
+Completed NSE at 13:43, 0.00s elapsed
+Initiating NSE at 13:43
+Completed NSE at 13:43, 0.00s elapsed
+Initiating ARP Ping Scan at 13:43
+Scanning db02.workshop.neko (192.168.1.26) [1 port]
+Completed ARP Ping Scan at 13:43, 0.07s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 13:43
+Completed Parallel DNS resolution of 1 host. at 13:43, 11.00s elapsed
+Initiating SYN Stealth Scan at 13:43
+Scanning db02.workshop.neko (192.168.1.26) [65535 ports]
+Discovered open port 445/tcp on 192.168.1.26
+Discovered open port 135/tcp on 192.168.1.26
+Discovered open port 139/tcp on 192.168.1.26
+Discovered open port 49666/tcp on 192.168.1.26
+Discovered open port 30000/tcp on 192.168.1.26
+SYN Stealth Scan Timing: About 22.43% done; ETC: 13:46 (0:01:47 remaining)
+Discovered open port 49665/tcp on 192.168.1.26
+Discovered open port 49667/tcp on 192.168.1.26
+SYN Stealth Scan Timing: About 41.35% done; ETC: 13:46 (0:01:31 remaining)
+SYN Stealth Scan Timing: About 71.78% done; ETC: 13:45 (0:00:37 remaining)
+Discovered open port 5985/tcp on 192.168.1.26
+Discovered open port 49669/tcp on 192.168.1.26
+Completed SYN Stealth Scan at 13:45, 130.61s elapsed (65535 total ports)
+Initiating Service scan at 13:45
+Scanning 9 services on db02.workshop.neko (192.168.1.26)
+Completed Service scan at 13:46, 53.62s elapsed (9 services on 1 host)
+Initiating OS detection (try #1) against db02.workshop.neko (192.168.1.26)
+Retrying OS detection (try #2) against db02.workshop.neko (192.168.1.26)
+NSE: Script scanning 192.168.1.26.
+Initiating NSE at 13:46
+Completed NSE at 13:47, 40.16s elapsed
+Initiating NSE at 13:47
+Completed NSE at 13:47, 0.02s elapsed
+Initiating NSE at 13:47
+Completed NSE at 13:47, 0.00s elapsed
+Nmap scan report for db02.workshop.neko (192.168.1.26)
+Host is up (0.0036s latency).
+Other addresses for db02.workshop.neko (not scanned): 2405:4802:d0dd:b60f:a8fb:c77a:5423:a6ac
+rDNS record for 192.168.1.26: DB02.workshop.neko
+Not shown: 65526 filtered tcp ports (no-response)
+PORT      STATE SERVICE       VERSION
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds?
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+30000/tcp open  mc-nmf        .NET Message Framing
+49665/tcp open  msrpc         Microsoft Windows RPC
+49666/tcp open  msrpc         Microsoft Windows RPC
+49667/tcp open  msrpc         Microsoft Windows RPC
+49669/tcp open  msrpc         Microsoft Windows RPC
+MAC Address: 00:15:5D:9C:D0:06 (Microsoft)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 2022|11|2016 (97%)
+OS CPE: cpe:/o:microsoft:windows_server_2022 cpe:/o:microsoft:windows_11 cpe:/o:microsoft:windows_server_2016
+Aggressive OS guesses: Microsoft Windows Server 2022 (97%), Microsoft Windows 11 21H2 (91%), Microsoft Windows Server 2016 (91%)
+No exact OS matches for host (test conditions non-ideal).
+Uptime guess: 0.908 days (since Wed Oct 22 15:59:28 2025)
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=256 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2025-10-23T06:46:53
+|_  start_date: N/A
+|_clock-skew: -1s
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| nbstat: NetBIOS name: DB02, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: 00:15:5d:9c:d0:06 (Microsoft)
+| Names:
+|   DB02&lt;20&gt;             Flags: &lt;unique&gt;&lt;active&gt;
+|   WORKSHOP&lt;00&gt;         Flags: &lt;group&gt;&lt;active&gt;
+|_  DB02&lt;00&gt;             Flags: &lt;unique&gt;&lt;active&gt;
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   3.61 ms DB02.workshop.neko (192.168.1.26)
+
+NSE: Script Post-scanning.
+Initiating NSE at 13:47
+Completed NSE at 13:47, 0.00s elapsed
+Initiating NSE at 13:47
+Completed NSE at 13:47, 0.00s elapsed
+Initiating NSE at 13:47
+Completed NSE at 13:47, 0.00s elapsed
+Read data files from: /usr/share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 239.77 seconds
+           Raw packets sent: 131232 (5.778MB) | Rcvd: 125 (6.156KB)
+</output><host comment=""><status state="up"></status><address addr="192.168.1.26" vendor="" addrtype="ipv4"></address><address addr="00:15:5D:9C:D0:06" vendor="Microsoft" addrtype="mac"></address><hostnames><hostname name="db02.workshop.neko" type="user"></hostname><hostname name="DB02.workshop.neko" type="PTR"></hostname></hostnames><ports><extraports count="65526" state="filtered"></extraports><port portid="135" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="msrpc" product="Microsoft Windows RPC"></service></port><port portid="139" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="netbios-ssn" product="Microsoft Windows netbios-ssn"></service></port><port portid="445" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="3" method="table" name="microsoft-ds"></service></port><port portid="5985" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="http" product="Microsoft HTTPAPI httpd" version="2.0" extrainfo="SSDP/UPnP"></service></port><port portid="30000" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="mc-nmf" product=".NET Message Framing"></service></port><port portid="49665" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="msrpc" product="Microsoft Windows RPC"></service></port><port portid="49666" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="msrpc" product="Microsoft Windows RPC"></service></port><port portid="49667" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="msrpc" product="Microsoft Windows RPC"></service></port><port portid="49669" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="msrpc" product="Microsoft Windows RPC"></service></port></ports><os><portused state="open" proto="tcp" portid="135"></portused><osmatch name="Microsoft Windows Server 2022" accuracy="97" line="82075"><osclass vendor="Microsoft" osfamily="Windows" type="general purpose" osgen="2022" accuracy="97"></osclass></osmatch><osmatch name="Microsoft Windows 11 21H2" accuracy="91" line="75497"><osclass vendor="Microsoft" osfamily="Windows" type="general purpose" osgen="11" accuracy="91"></osclass></osmatch><osmatch name="Microsoft Windows Server 2016" accuracy="91" line="81686"><osclass vendor="Microsoft" osfamily="Windows" type="general purpose" osgen="2016" accuracy="91"></osclass></osmatch></os><uptime seconds="78486" lastboot="Wed Oct 22 15:59:28 2025"></uptime><tcpsequence index="256" difficulty="Good luck!" values="AC4DEFD4,9AA9D83A,5FD090F1,244DC96F,D2595823,222E53FC"></tcpsequence><ipidsequence class="Incremental" values="BF7F,BF80,BF81,BF82,BF83,BF84"></ipidsequence><tcptssequence class="1000HZ" values="4ACF89D,4ACF8FF,4ACF963,4ACF9C7,4ACFA2B,4ACFA8E"></tcptssequence><trace proto="" port=""><hop ttl="1" rtt="3.61" ipaddr="192.168.1.26" host="DB02.workshop.neko"></hop></trace></host><runstats><finished time="1761202054" timestr="Thu Oct 23 13:47:34 2025"></finished><hosts up="1" down="0" total="1"></hosts></runstats></nmaprun>

@@ -22,7 +22,7 @@ Key note:
 	5. For Windows Server 2022 Datacenter Core (with Advanced GUI Tools), after installed updates and got activated, 
 		running this command to install advanced GUI tools (such as mmc.exe):
 			Add-WindowsCapability -Online -Name "ServerCore.AppCompatibility~~~~0.0.1.0"
-	
+
 * For Ubuntu Server
 	1. Should only install Cockpit Web Interface for HV02
 	2. SSH should block the authenticate with password when connecting (Only use certificate).
@@ -48,7 +48,7 @@ AUTH:
 	Act as the RADIUS server for IEEE 802.11 Authentication using Active Directory infra
 	Act as the central management server (must have full RSATs)
 
-DB01, DB02:
+DB:
 	Act as the SQL Server of the network
 	Must configure high-availability group
 
@@ -56,7 +56,7 @@ WEB:
 	Act as the web service of the local network
 	Note: Must install runner for DEVOPS server
 
-DNS01, DNS02:
+DNS:
 	Act as the DNS relay node. Control the DNS requests in the network and block invalid/risky DNS requests
 
 DEVOPS:

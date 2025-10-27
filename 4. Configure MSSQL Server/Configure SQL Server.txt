@@ -1,4 +1,4 @@
-Configure SQL Server on DB01 and DB02
+Configure SQL Server on DB
 
 * SQL Server 2022 Product Key: J4V48-P8MM4–9N3J9-HD97X-DYMRM
 

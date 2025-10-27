@@ -60,20 +60,7 @@ AUTH:
 	- Optional Features:
 		All RSATs
 
-DB01:
-	- Operating System: Windows Server 2022 Datacenter Core (with Advanced GUI Tools)
-	- Required Roles:
-		File Server (with Storage Services)
-		SQL Server 2022 Enterprise
-	- Required Features:
-		Enhanced Storage
-		Microsoft Defender Antivirus
-		Setup and Boot Event Collection
-		System Data Archiver
-		System Insights
-		Windows Server Backup
-
-DB02:
+DB:
 	- Operating System: Windows Server 2022 Datacenter Core (with Advanced GUI Tools)
 	- Required Roles:
 		File Server (with Storage Services)
@@ -100,21 +87,6 @@ WEB:
 		System Insights
 		Windows Server Backup
 
-BK:
-	- Operating System: Windows Server 2022 Datacenter Core
-	- Required Roles:
-		File Server (with Data Deduplication and Storage Services)
-		SQL Server 2022 Enterprise
-	- Required Features:
-		Enhanced Storage
-		Microsoft Defender Antivirus
-		Setup and Boot Event Collection
-		System Data Archiver
-		System Insights
-		Windows Server Backup
-	- Additional Requirements:
-		Physical Hard Drive (HDD) for Backup Operation
-
 HV02:
 	- Operating System: Ubuntu Server 24.04 LTS on ARM64
 	- Required Roles:
@@ -127,13 +99,7 @@ HV02:
 		Network Manager Deamon
 		Bare Metal Backup Service with dd
 
-DNS01:
-	- Operating System: Ubuntu Server 24.04 LTS on ARM64
-	- Required Softwares:
-		Pi-Hole Ad-blocker
-		SSH Remote Server
-
-DNS02:
+DNS:
 	- Operating System: Ubuntu Server 24.04 LTS on ARM64
 	- Required Softwares:
 		Pi-Hole Ad-blocker

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?><nmaprun args="nmap -p 1-65535 -T4 -A -v -Pn dc02.workshop.neko" profile_name="" scanner="nmap" start="1761200558" startstr="Thu Oct 23 13:22:38 2025" version="7.95" xmloutputversion="1.04"><scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"></scaninfo><verbose level="1"></verbose><debugging level="0"></debugging><output type="interactive">Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-10-23 13:22 +07
+NSE: Loaded 157 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 13:22
+Completed NSE at 13:22, 0.00s elapsed
+Initiating NSE at 13:22
+Completed NSE at 13:22, 0.00s elapsed
+Initiating NSE at 13:22
+Completed NSE at 13:22, 0.00s elapsed
+Initiating ARP Ping Scan at 13:22
+Scanning dc02.workshop.neko (192.168.1.11) [1 port]
+Completed ARP Ping Scan at 13:22, 0.06s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 13:22
+Completed Parallel DNS resolution of 1 host. at 13:22, 11.00s elapsed
+Initiating SYN Stealth Scan at 13:22
+Scanning dc02.workshop.neko (192.168.1.11) [65535 ports]
+Discovered open port 445/tcp on 192.168.1.11
+Discovered open port 139/tcp on 192.168.1.11
+Discovered open port 135/tcp on 192.168.1.11
+Discovered open port 53/tcp on 192.168.1.11
+Discovered open port 51930/tcp on 192.168.1.11
+Discovered open port 3268/tcp on 192.168.1.11
+SYN Stealth Scan Timing: About 23.51% done; ETC: 13:25 (0:01:41 remaining)
+Discovered open port 49670/tcp on 192.168.1.11
+Discovered open port 593/tcp on 192.168.1.11
+Discovered open port 88/tcp on 192.168.1.11
+Discovered open port 30000/tcp on 192.168.1.11
+Discovered open port 49675/tcp on 192.168.1.11
+Discovered open port 9389/tcp on 192.168.1.11
+SYN Stealth Scan Timing: About 59.78% done; ETC: 13:24 (0:00:41 remaining)
+Discovered open port 49667/tcp on 192.168.1.11
+Discovered open port 49668/tcp on 192.168.1.11
+Discovered open port 5985/tcp on 192.168.1.11
+Discovered open port 389/tcp on 192.168.1.11
+Discovered open port 636/tcp on 192.168.1.11
+Discovered open port 49673/tcp on 192.168.1.11
+Discovered open port 49664/tcp on 192.168.1.11
+Discovered open port 3269/tcp on 192.168.1.11
+Discovered open port 464/tcp on 192.168.1.11
+Discovered open port 64024/tcp on 192.168.1.11
+Discovered open port 51931/tcp on 192.168.1.11
+Completed SYN Stealth Scan at 13:24, 88.01s elapsed (65535 total ports)
+Initiating Service scan at 13:24
+Scanning 23 services on dc02.workshop.neko (192.168.1.11)
+Completed Service scan at 13:25, 53.61s elapsed (23 services on 1 host)
+Initiating OS detection (try #1) against dc02.workshop.neko (192.168.1.11)
+Retrying OS detection (try #2) against dc02.workshop.neko (192.168.1.11)
+NSE: Script scanning 192.168.1.11.
+Initiating NSE at 13:25
+Completed NSE at 13:25, 40.08s elapsed
+Initiating NSE at 13:25
+Completed NSE at 13:25, 1.38s elapsed
+Initiating NSE at 13:25
+Completed NSE at 13:25, 0.00s elapsed
+Nmap scan report for dc02.workshop.neko (192.168.1.11)
+Host is up (0.0042s latency).
+Other addresses for dc02.workshop.neko (not scanned): 2405:4802:d0dd:b60f:22cb:cbb7:5332:7a66 2405:4802:d0dd:b6e0:ffff:ffff:ffff:fff9
+rDNS record for 192.168.1.11: DC02.workshop.neko
+Not shown: 65512 filtered tcp ports (no-response)
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2025-10-23 06:24:22Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: workshop.neko0., Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=DC02.workshop.neko
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:DC02.workshop.neko
+| Issuer: commonName=workshop-DC01-CA
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha512WithRSAEncryption
+| Not valid before: 2025-10-12T02:08:19
+| Not valid after:  2026-10-12T02:08:19
+| MD5:   f48a:48f2:45d9:8e4d:5e13:9bf4:713a:ac64
+|_SHA-1: 916d:773c:2af6:601d:17a7:d803:f57f:9760:0f75:477d
+|_ssl-date: TLS randomness does not represent time
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: workshop.neko0., Site: Default-First-Site-Name)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=DC02.workshop.neko
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:DC02.workshop.neko
+| Issuer: commonName=workshop-DC01-CA
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha512WithRSAEncryption
+| Not valid before: 2025-10-12T02:08:19
+| Not valid after:  2026-10-12T02:08:19
+| MD5:   f48a:48f2:45d9:8e4d:5e13:9bf4:713a:ac64
+|_SHA-1: 916d:773c:2af6:601d:17a7:d803:f57f:9760:0f75:477d
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: workshop.neko0., Site: Default-First-Site-Name)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=DC02.workshop.neko
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:DC02.workshop.neko
+| Issuer: commonName=workshop-DC01-CA
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha512WithRSAEncryption
+| Not valid before: 2025-10-12T02:08:19
+| Not valid after:  2026-10-12T02:08:19
+| MD5:   f48a:48f2:45d9:8e4d:5e13:9bf4:713a:ac64
+|_SHA-1: 916d:773c:2af6:601d:17a7:d803:f57f:9760:0f75:477d
+3269/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: workshop.neko0., Site: Default-First-Site-Name)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=DC02.workshop.neko
+| Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1:&lt;unsupported&gt;, DNS:DC02.workshop.neko
+| Issuer: commonName=workshop-DC01-CA
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha512WithRSAEncryption
+| Not valid before: 2025-10-12T02:08:19
+| Not valid after:  2026-10-12T02:08:19
+| MD5:   f48a:48f2:45d9:8e4d:5e13:9bf4:713a:ac64
+|_SHA-1: 916d:773c:2af6:601d:17a7:d803:f57f:9760:0f75:477d
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+9389/tcp  open  mc-nmf        .NET Message Framing
+30000/tcp open  mc-nmf        .NET Message Framing
+49664/tcp open  msrpc         Microsoft Windows RPC
+49667/tcp open  msrpc         Microsoft Windows RPC
+49668/tcp open  msrpc         Microsoft Windows RPC
+49670/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49673/tcp open  msrpc         Microsoft Windows RPC
+49675/tcp open  msrpc         Microsoft Windows RPC
+51930/tcp open  msrpc         Microsoft Windows RPC
+51931/tcp open  msrpc         Microsoft Windows RPC
+64024/tcp open  msrpc         Microsoft Windows RPC
+MAC Address: 00:15:5D:9C:D0:04 (Microsoft)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 2022|11|2016 (97%)
+OS CPE: cpe:/o:microsoft:windows_server_2022 cpe:/o:microsoft:windows_11 cpe:/o:microsoft:windows_server_2016
+Aggressive OS guesses: Microsoft Windows Server 2022 (97%), Microsoft Windows 11 21H2 (91%), Microsoft Windows Server 2016 (91%)
+No exact OS matches for host (test conditions non-ideal).
+Uptime guess: 0.893 days (since Wed Oct 22 15:59:21 2025)
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=261 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: Host: DC02; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2025-10-23T06:25:14
+|_  start_date: N/A
+|_clock-skew: -2s
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| nbstat: NetBIOS name: DC02, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: 00:15:5d:9c:d0:04 (Microsoft)
+| Names:
+|   DC02&lt;00&gt;             Flags: &lt;unique&gt;&lt;active&gt;
+|   WORKSHOP&lt;00&gt;         Flags: &lt;group&gt;&lt;active&gt;
+|   WORKSHOP&lt;1c&gt;         Flags: &lt;group&gt;&lt;active&gt;
+|_  DC02&lt;20&gt;             Flags: &lt;unique&gt;&lt;active&gt;
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   4.20 ms DC02.workshop.neko (192.168.1.11)
+
+NSE: Script Post-scanning.
+Initiating NSE at 13:25
+Completed NSE at 13:25, 0.00s elapsed
+Initiating NSE at 13:25
+Completed NSE at 13:25, 0.00s elapsed
+Initiating NSE at 13:25
+Completed NSE at 13:25, 0.00s elapsed
+Read data files from: /usr/share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 198.57 seconds
+           Raw packets sent: 131183 (5.776MB) | Rcvd: 146 (10.551KB)
+</output><host comment=""><status state="up"></status><address addr="192.168.1.11" vendor="" addrtype="ipv4"></address><address addr="00:15:5D:9C:D0:04" vendor="Microsoft" addrtype="mac"></address><hostnames><hostname name="dc02.workshop.neko" type="user"></hostname><hostname name="DC02.workshop.neko" type="PTR"></hostname></hostnames><ports><extraports count="65512" state="filtered"></extraports><port portid="53" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="domain" product="Simple DNS Plus"></service></port><port portid="88" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="kerberos-sec" product="Microsoft Windows Kerberos" extrainfo="server time: 2025-10-23 06:24:22Z"></service></port><port portid="135" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="msrpc" product="Microsoft Windows RPC"></service></port><port portid="139" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="netbios-ssn" product="Microsoft Windows netbios-ssn"></service></port><port portid="389" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="ldap" product="Microsoft Windows Active Directory LDAP" extrainfo="Domain: workshop.neko0., Site: Default-First-Site-Name"></service></port><port portid="445" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="3" method="table" name="microsoft-ds"></service></port><port portid="464" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="3" method="table" name="kpasswd5"></service></port><port portid="593" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="ncacn_http" product="Microsoft Windows RPC over HTTP" version="1.0"></service></port><port portid="636" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="ldap" product="Microsoft Windows Active Directory LDAP" extrainfo="Domain: workshop.neko0., Site: Default-First-Site-Name"></service></port><port portid="3268" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="ldap" product="Microsoft Windows Active Directory LDAP" extrainfo="Domain: workshop.neko0., Site: Default-First-Site-Name"></service></port><port portid="3269" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="ldap" product="Microsoft Windows Active Directory LDAP" extrainfo="Domain: workshop.neko0., Site: Default-First-Site-Name"></service></port><port portid="5985" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="http" product="Microsoft HTTPAPI httpd" version="2.0" extrainfo="SSDP/UPnP"></service></port><port portid="9389" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="mc-nmf" product=".NET Message Framing"></service></port><port portid="30000" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="mc-nmf" product=".NET Message Framing"></service></port><port portid="49664" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="msrpc" product="Microsoft Windows RPC"></service></port><port portid="49667" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="msrpc" product="Microsoft Windows RPC"></service></port><port portid="49668" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="msrpc" product="Microsoft Windows RPC"></service></port><port portid="49670" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="ncacn_http" product="Microsoft Windows RPC over HTTP" version="1.0"></service></port><port portid="49673" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="msrpc" product="Microsoft Windows RPC"></service></port><port portid="49675" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="msrpc" product="Microsoft Windows RPC"></service></port><port portid="51930" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="msrpc" product="Microsoft Windows RPC"></service></port><port portid="51931" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="msrpc" product="Microsoft Windows RPC"></service></port><port portid="64024" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="msrpc" product="Microsoft Windows RPC"></service></port></ports><os><portused state="open" proto="tcp" portid="53"></portused><osmatch name="Microsoft Windows Server 2022" accuracy="97" line="82075"><osclass vendor="Microsoft" osfamily="Windows" type="general purpose" osgen="2022" accuracy="97"></osclass></osmatch><osmatch name="Microsoft Windows 11 21H2" accuracy="91" line="75497"><osclass vendor="Microsoft" osfamily="Windows" type="general purpose" osgen="11" accuracy="91"></osclass></osmatch><osmatch name="Microsoft Windows Server 2016" accuracy="91" line="81686"><osclass vendor="Microsoft" osfamily="Windows" type="general purpose" osgen="2016" accuracy="91"></osclass></osmatch></os><uptime seconds="77196" lastboot="Wed Oct 22 15:59:21 2025"></uptime><tcpsequence index="261" difficulty="Good luck!" values="68237868,81CE7F55,BAB8144,3D9A4C4E,5889E8B5,991CD010"></tcpsequence><ipidsequence class="Incremental" values="6587,6588,6589,658A,658B,658C"></ipidsequence><tcptssequence class="1000HZ" values="4994578,49945DC,4994641,49946A4,499471D,499476E"></tcptssequence><trace proto="" port=""><hop ttl="1" rtt="4.20" ipaddr="192.168.1.11" host="DC02.workshop.neko"></hop></trace></host><runstats><finished time="1761200757" timestr="Thu Oct 23 13:25:57 2025"></finished><hosts up="1" down="0" total="1"></hosts></runstats></nmaprun>

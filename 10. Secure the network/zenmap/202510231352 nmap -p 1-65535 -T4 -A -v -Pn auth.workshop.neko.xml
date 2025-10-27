@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?><nmaprun args="nmap -p 1-65535 -T4 -A -v -Pn auth.workshop.neko" profile_name="" scanner="nmap" start="1761202375" startstr="Thu Oct 23 13:52:55 2025" version="7.95" xmloutputversion="1.04"><scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"></scaninfo><verbose level="1"></verbose><debugging level="0"></debugging><output type="interactive">Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-10-23 13:52 +07
+NSE: Loaded 157 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 13:52
+Completed NSE at 13:52, 0.00s elapsed
+Initiating NSE at 13:52
+Completed NSE at 13:52, 0.00s elapsed
+Initiating NSE at 13:52
+Completed NSE at 13:52, 0.00s elapsed
+Initiating ARP Ping Scan at 13:52
+Scanning auth.workshop.neko (192.168.1.20) [1 port]
+Completed ARP Ping Scan at 13:52, 0.05s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 13:52
+Completed Parallel DNS resolution of 1 host. at 13:53, 11.00s elapsed
+Initiating SYN Stealth Scan at 13:53
+Scanning auth.workshop.neko (192.168.1.20) [65535 ports]
+Discovered open port 135/tcp on 192.168.1.20
+Discovered open port 3389/tcp on 192.168.1.20
+Discovered open port 80/tcp on 192.168.1.20
+Discovered open port 445/tcp on 192.168.1.20
+Discovered open port 443/tcp on 192.168.1.20
+SYN Stealth Scan Timing: About 23.59% done; ETC: 13:55 (0:01:40 remaining)
+Discovered open port 49667/tcp on 192.168.1.20
+SYN Stealth Scan Timing: About 60.12% done; ETC: 13:54 (0:00:40 remaining)
+Discovered open port 5985/tcp on 192.168.1.20
+Discovered open port 5985/tcp on 192.168.1.20
+SYN Stealth Scan Timing: About 74.24% done; ETC: 13:55 (0:00:36 remaining)
+Discovered open port 49670/tcp on 192.168.1.20
+Discovered open port 30000/tcp on 192.168.1.20
+Completed SYN Stealth Scan at 13:55, 127.80s elapsed (65535 total ports)
+Initiating Service scan at 13:55
+Scanning 9 services on auth.workshop.neko (192.168.1.20)
+Completed Service scan at 13:56, 53.60s elapsed (9 services on 1 host)
+Initiating OS detection (try #1) against auth.workshop.neko (192.168.1.20)
+Retrying OS detection (try #2) against auth.workshop.neko (192.168.1.20)
+NSE: Script scanning 192.168.1.20.
+Initiating NSE at 13:56
+Completed NSE at 13:56, 40.30s elapsed
+Initiating NSE at 13:56
+Completed NSE at 13:56, 0.08s elapsed
+Initiating NSE at 13:56
+Completed NSE at 13:56, 0.00s elapsed
+Nmap scan report for auth.workshop.neko (192.168.1.20)
+Host is up (0.0026s latency).
+Other addresses for auth.workshop.neko (not scanned): 2405:4802:d0dd:b60f:d4af:5d62:b35e:2a69
+Not shown: 65526 filtered tcp ports (no-response)
+PORT      STATE SERVICE       VERSION
+80/tcp    open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Not Found
+|_http-server-header: Microsoft-HTTPAPI/2.0
+135/tcp   open  msrpc         Microsoft Windows RPC
+443/tcp   open  https?
+445/tcp   open  microsoft-ds?
+3389/tcp  open  ms-wbt-server Microsoft Terminal Services
+| ssl-cert: Subject: commonName=AUTH.workshop.neko
+| Issuer: commonName=AUTH.workshop.neko
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2025-10-13T10:12:03
+| Not valid after:  2026-04-14T10:12:03
+| MD5:   69b1:2461:13cb:e7f1:dd32:49c8:0b63:63df
+|_SHA-1: e7cc:192d:4713:e762:c45c:ccb2:6e64:e01e:b43f:febc
+|_ssl-date: 2025-10-23T06:56:50+00:00; -2s from scanner time.
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+30000/tcp open  mc-nmf        .NET Message Framing
+49667/tcp open  msrpc         Microsoft Windows RPC
+49670/tcp open  msrpc         Microsoft Windows RPC
+MAC Address: 00:15:5D:9C:D0:07 (Microsoft)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 2022|11|2016 (92%)
+OS CPE: cpe:/o:microsoft:windows_server_2022 cpe:/o:microsoft:windows_11 cpe:/o:microsoft:windows_server_2016
+Aggressive OS guesses: Microsoft Windows Server 2022 (92%), Microsoft Windows 11 21H2 (85%), Microsoft Windows Server 2016 (85%)
+No exact OS matches for host (test conditions non-ideal).
+Uptime guess: 0.915 days (since Wed Oct 22 15:59:44 2025)
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=256 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2025-10-23T06:56:15
+|_  start_date: N/A
+|_clock-skew: mean: -1s, deviation: 0s, median: -2s
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   2.58 ms 192.168.1.20
+
+NSE: Script Post-scanning.
+Initiating NSE at 13:56
+Completed NSE at 13:56, 0.00s elapsed
+Initiating NSE at 13:56
+Completed NSE at 13:56, 0.00s elapsed
+Initiating NSE at 13:56
+Completed NSE at 13:56, 0.00s elapsed
+Read data files from: /usr/share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 237.39 seconds
+           Raw packets sent: 196774 (8.663MB) | Rcvd: 124 (5.640KB)
+</output><host comment=""><status state="up"></status><address addr="192.168.1.20" vendor="" addrtype="ipv4"></address><address addr="00:15:5D:9C:D0:07" vendor="Microsoft" addrtype="mac"></address><hostnames><hostname name="auth.workshop.neko" type="user"></hostname></hostnames><ports><extraports count="65526" state="filtered"></extraports><port portid="80" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="http" product="Microsoft HTTPAPI httpd" version="2.0" extrainfo="SSDP/UPnP"></service></port><port portid="135" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="msrpc" product="Microsoft Windows RPC"></service></port><port portid="443" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="3" method="table" name="https"></service></port><port portid="445" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="3" method="table" name="microsoft-ds"></service></port><port portid="3389" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="ms-wbt-server" product="Microsoft Terminal Services"></service></port><port portid="5985" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="http" product="Microsoft HTTPAPI httpd" version="2.0" extrainfo="SSDP/UPnP"></service></port><port portid="30000" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="mc-nmf" product=".NET Message Framing"></service></port><port portid="49667" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="msrpc" product="Microsoft Windows RPC"></service></port><port portid="49670" protocol="tcp"><state state="open" reason="syn-ack" reason_ttl="128"></state><service conf="10" method="probed" name="msrpc" product="Microsoft Windows RPC"></service></port></ports><os><portused state="open" proto="tcp" portid="80"></portused><osmatch name="Microsoft Windows Server 2022" accuracy="92" line="82075"><osclass vendor="Microsoft" osfamily="Windows" type="general purpose" osgen="2022" accuracy="92"></osclass></osmatch><osmatch name="Microsoft Windows 11 21H2" accuracy="85" line="75497"><osclass vendor="Microsoft" osfamily="Windows" type="general purpose" osgen="11" accuracy="85"></osclass></osmatch><osmatch name="Microsoft Windows Server 2016" accuracy="85" line="81686"><osclass vendor="Microsoft" osfamily="Windows" type="general purpose" osgen="2016" accuracy="85"></osclass></osmatch></os><uptime seconds="79028" lastboot="Wed Oct 22 15:59:44 2025"></uptime><tcpsequence index="256" difficulty="Good luck!" values="CEBF2A9B,F70C9E73,D554CB16,B9841EDE,E369A1E4,3F7DE366"></tcpsequence><ipidsequence class="Incremental" values="395C,395D,395E,395F,3960,3961"></ipidsequence><tcptssequence class="1000HZ" values="4B53BE3,4B53C46,4B53CAB,4B53D11,4B53D73,4B53DD6"></tcptssequence><trace proto="" port=""><hop ttl="1" rtt="2.58" ipaddr="192.168.1.20" host=""></hop></trace></host><runstats><finished time="1761202612" timestr="Thu Oct 23 13:56:52 2025"></finished><hosts up="1" down="0" total="1"></hosts></runstats></nmaprun>
