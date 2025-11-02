@@ -7,7 +7,10 @@ Pre-install AD FS:
 	1. Configure the Web Server certificate
 		Note that the Web Server certificate should include these parameters
 			Common Name: adfs.workshop.neko
-			DNS: adfs.workshop.neko, auth.workshop.neko, certauth.adfs.workshop.neko, enterpriseregistration.workshop.neko
+			DNS: 
+				- adfs.workshop.neko, certauth.adfs.workshop.neko
+				- auth.workshop.neko, certauth.auth.workshop.neko
+				- enterpriseregistration.workshop.neko
 
 New install AD FS Farm on AUTH
 	Run script Configure-ADFS.ps1. Don't forget to change the $certThumb to the thumbprint of the certficate you just have enrolled

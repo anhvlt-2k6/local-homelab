@@ -21,4 +21,4 @@ Install-AdfsFarm `
 	-FederationServiceDisplayName:"The Neko Workshop Federation Service" `
 	-FederationServiceName:"adfs.workshop.neko" `
 	-GroupServiceAccountIdentifier:"WORKSHOP\adfssrv`$" `
-	-SQLConnectionString:"Data Source=db01.workshop.neko;Initial Catalog=ADFSConfiguration;Integrated Security=True;Min Pool Size=20;Encrypt=True"
+	-SQLConnectionString:"Data Source=db.workshop.neko;Initial Catalog=ADFSConfiguration;Integrated Security=True;Min Pool Size=20;Encrypt=True"
