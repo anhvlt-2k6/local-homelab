@@ -1,4 +1,4 @@
-str = '358bd1a4f2cf7300d48b93c17590afea499b648e'
+str = ''
 str_sep = ''
 
 for i in range(len(str)):
