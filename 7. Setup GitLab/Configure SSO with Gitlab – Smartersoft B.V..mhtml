@@ -429,7 +429,7 @@ auto_sign_in_with_provider'] =3D 'saml'</code></div></div></td></tr></tbody=
 <h2>Configuring ADFS</h2>
 <p>Once you have changed the gitlab settings, you=E2=80=99ll be able to add=
  Gitlab as a relying party by importing the metadata. The metadata is avail=
-able at&nbsp;<strong>https://git.yourdomain.com/auth/saml/metadata</strong>=
+able at&nbsp;<strong>https://git.yourdomain.com/users/auth/saml/metadata</strong>=
 . So go ahead and add Gitlab as a relying party.</p>
 <p>For configuring the claims you can just go ahead and add a new Rule (Sen=
 d LDAP Attributes as Claims).</p>
